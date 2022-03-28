@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Pin Kodu</title>
+</head>
+
+<body>
+        <img src="/Users/selamiarslan/Desktop/ders/bg.jpg" alt="manzara.jpg"  height="750px">
+    <h1>Pin Kodu Hesaplayıcı</h1>
+    <br>
+   
+    <div id="info">
+    <p> <strong> Ör: 30.01.2001</strong></p>
+    <form>
+
+        <label>Gün:</label> 
+        <input type="text" placeholder="30" id="day" oninput="getDay()" maxlength="2" size="6"> 
+        <label class="error" id="dayError"></label>
+        
+        <br> <br> 
+        
+        <label >Ay:</label> 
+        <input type="text" placeholder="01" id="month"  oninput="getMonth()" maxlength="2" size="6">
+        <label class="error" id="monthError"></label>
+
+        <br> <br>
+
+        <label >Yıl:</label> 
+        <input type="text" placeholder="2001" id="year" oninput="getYear()" maxlength="4" size="6">
+        <label class="error" id="yearError"></label>
+     </div>  
+
+    </form>
+
+
+
+    <br>
+    <input type="submit" id="button" value="Submit" onclick="printResults()">
+    <br><br>
+
+    <div id="results">
+
+    <h2 id="number"></h2>
+ 
+
+    <textarea name="area" id="area" cols="50" rows="20" readonly></textarea>
+
+    </div>
+
+    <script src="index.js"></script>
+
+  
+    
+</body>
+</html>
