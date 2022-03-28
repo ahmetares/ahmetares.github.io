@@ -2,25 +2,56 @@ body{
     text-align: center;
     background-position: center;
     font-weight: bold;
+    font-family: "Inter";
+
+    /* https://medium.com/@batuhangoksu/css-yeni-viewport-vw-vh-vmin-birimleri-b6f9b1e92d3f */
+    /* browserin genisligi */
+    width: 100vw;
+    /* browserin yuksekligi */
+    height: 100vh;
+    background-image: url('./bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 img{
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-h1{
-    position: absolute;
-    top: 50px ;
-    left: 570px;
-
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-#info{
-    position: absolute;
-    top: 120px;
-    left: 650px;
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* elementleri mobilde alt alta diz */
+  flex-direction: column;
+  /* aralarina 50px bosluk ver */
+  gap: 50px;
+}
+
+/* eger sayfanin genisligi 768px'i yani tablet boyutunu
+asiyorsa elementleri yan yana diz */
+@media (min-width: 768px){
+  .wrapper{
+    flex-direction: row;
+  }
+}
+
+#button {
+  background-color: #000;
+  padding: 12px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
 }
 
 #info label {
@@ -38,20 +69,7 @@ h1{
     color: black;
    
 }
-
-#button{
-    position: absolute;
-    top: 300px;
-    left: 680px;
-}
     
-    
-#results{
-    position: absolute;
-    left: 500px;
-    top: 320px;
-}   
-
 #results h2{
     margin-bottom: 50px;
 }
@@ -60,6 +78,7 @@ h1{
     resize: none;
     opacity: 0.7;
     font-style: italic;
+    line-height: 2;
     
 }
 

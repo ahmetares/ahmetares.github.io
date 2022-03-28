@@ -33,9 +33,9 @@ function getBirthday() {
   let month = getMonth()
   let year = getYear()
 
-  console.log(day + '.' + month + '.' + year)
+  console.log(`${day}.${month}.${year}`)
 
-  return day + '.' + month + '.' + year
+  return `${day}.${month}.${year}`
 }
 
 function convertToOneDigit(a, b) {
@@ -236,43 +236,54 @@ function check() {
   //[30 , 01 , 2001]
   let checked = true
   //console.log(bday)
+  const yearError = document.getElementById('yearError')
+  const monthError = document.getElementById('monthError')
+  const dayError = document.getElementById('dayError')
 
   if ( Number(bday[0] > 30) || Number(bday[0] <= 0) || bday[0].length != 2 || /^([a-zA-Z]{0,})$/.test(bday[0])) {
-    document.getElementById('dayError').innerHTML = 'Gün 2 rakamdan oluşmalıdır (01-30)'
+    dayError.innerHTML = 'Gün 2 rakamdan oluşmalıdır (01-30)'
     checked = false
   }
    if ( Number(bday[1] > 12) || Number(bday[1] <= 0) || bday[1].length != 2 || /^([a-zA-Z]{0,})$/.test(bday[1])) {
-    document.getElementById('monthError').innerHTML = 'Ay 2 rakamdan oluşmalıdır (01-12)'
+    monthError.innerHTML = 'Ay 2 rakamdan oluşmalıdır (01-12)'
     checked = false
   }
    if (bday[2].length !== 4 || /^([a-zA-Z]{0,})$/.test(bday[2])) {
-    document.getElementById('yearError').innerHTML ='Yıl 4 rakamdan oluşmalıdır'
+    yearError.innerHTML ='Yıl 4 rakamdan oluşmalıdır'
     checked = false
   }
 
   if (checked) {
-    document.getElementById('dayError').innerHTML = ''
-    document.getElementById('monthError').innerHTML = ''
-    document.getElementById('yearError').innerHTML = ''
+    dayError.innerHTML = ''
+    monthError.innerHTML = ''
+    yearError.innerHTML = ''
     //CSS
     document.getElementById('number').style.color='yellow'
     document.getElementById('info').style.left='650px'
 
   }
   if (!checked) {
-    document.getElementById('number').innerHTML = 'Hatalarınızı Düzeltin'
+    const number = document.getElementById('number')
+
+    number.innerHTML = 'Hatalarınızı Düzeltin'
+    number.style.color='red'
+
     document.getElementById('area').innerHTML = ''
     //CSS
     document.getElementById('info').style.left='550px'
-    document.getElementById('number').style.color='red'
-   
-
   }
 
   return checked
 }
 
-function printResults() {
+const getForm = document.getElementById('calculateForm')
+
+getForm.addEventListener('submit', printResults)
+
+function printResults(e) {
+  // formun submit olmasini engelle
+  e.preventDefault()
+
   if (check()) {
     let [code, character] = calculate()
 
