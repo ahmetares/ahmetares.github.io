@@ -256,14 +256,13 @@ function check() {
     document.getElementById('yearError').innerHTML = ''
     //CSS
     document.getElementById('number').style.color='yellow'
-    document.getElementById('info').style.left='650px'
+    document.getElementById('info').style.left='50%'
 
   }
   if (!checked) {
     document.getElementById('number').innerHTML = 'Hatalarınızı Düzeltin'
     document.getElementById('area').innerHTML = ''
     //CSS
-    document.getElementById('info').style.left='550px'
     document.getElementById('number').style.color='red'
    
 
