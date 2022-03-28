@@ -52,6 +52,8 @@ function convertToOneDigit(a, b) {
 
 function printOneTime(array) {
   //her bir özelliği bir kere basma (3-3-1-7-1-6-4-1) => 3. özelliği bir kere bassın
+  
+  document.getElementById('area').innerHTML=''
 
   for (let i = 0; i < array.length; i++) {
     let isRepeated = false
