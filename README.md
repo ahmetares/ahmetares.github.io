@@ -1,5 +1,4 @@
-garip bir şey
-http://www.leblebitozu.com/kaderin-pin-kodu-dogum-tarihinize-gore-karakter-analizi/
+pinkodu-http://www.leblebitozu.com/kaderin-pin-kodu-dogum-tarihinize-gore-karakter-analizi/
 
 
-https://ahmetares.github.io/
+hesaplayıcı-https://ahmetares.github.io/
